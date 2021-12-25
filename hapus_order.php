@@ -1,7 +1,7 @@
 <?php 
 session_start();
  
-$id_menu = $_GET["id_produk"];
+$id_produk = $_GET["id_produk"];
 
 unset($_SESSION["order"][$id_produk]);
 

@@ -78,91 +78,35 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
       </nav>
   <!-- Akhir Navbar -->
 
-  <!-- Awal produk -->
-    <div class="container">
+
+  
+  <div class="container">
       <div class="judul-pesanan mt-5">
-       
-        <h3 class="text-center font-weight-bold">PESANAN ANDA</h3>
-        
-      </div>
-      <table class="table table-bordered" id="example">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama Pesanan</th>
-            <th scope="col">Harga</th>
-            <th scope="col">Jumlah</th>
-            <th scope="col">Subharga</th>
-            <th scope="col">Opsi</th>
-          </tr>
-        </thead>
-        <tbody>
-            <?php $nomor=1; ?>
-            <?php $totalbelanja = 0; ?>
-            <?php foreach ($_SESSION["order"] as $id_produk => $jumlah) : ?>
-
-            <?php 
-              include('koneksi.php');
-              $ambil = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
-              $pecah = $ambil -> fetch_assoc();
-              $subharga = $pecah["harga"]*$jumlah;
-
-            ?>
-          <tr>
-            <td><?php echo $nomor; ?></td>
-            <td><?php echo $pecah["nama_produk"]; ?></td>
-            <td>Rp. <?php echo number_format($pecah["harga"]); ?></td>
-            <td><?php echo $jumlah; ?></td>
-            <td>Rp. <?php echo number_format($subharga); ?></td>
-            <td>
-              <a href="hapus_order.php?id_produk=<?php echo $id_produk ?>" class="badge badge-danger">Hapus</a>
-            </td>
-          </tr>
-            <?php $nomor++; ?>
-            <?php $totalbelanja+=$subharga; ?>
-            <?php endforeach ?>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th colspan="4">Total Belanja</th>
-            <th colspan="2">Rp. <?php echo number_format($totalbelanja) ?></th>
-          </tr>
-        </tfoot>
-      </table><br>
-      <form method="POST" action="">
-        <a href="produk_pembeli.php" class="btn btn-primary btn-sm">Lihat Produk</a>
-        <button class="btn btn-success btn-sm" name="konfirm">Konfirmasi Pesanan</button>
-      </form>        
 
       <?php 
-      if(isset($_POST['konfirm'])) {
-          $tanggal_pemesanan=date("Y-m-d");
 
-          // Menyimpan data ke tabel pemesanan
-          $insert = mysqli_query($koneksi, "INSERT INTO pemesanan (tanggal_pemesanan, total_belanja) VALUES ('$tanggal_pemesanan', '$totalbelanja')");
+include('koneksi.php');
+$id_produk = $_GET['id_produk'];
+$query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
+$result = mysqli_fetch_array($query);
 
-          // Mendapatkan ID barusan
-          $id_terbaru = $koneksi->insert_id;
 
-          // Menyimpan data ke tabel pemesanan produk
-          foreach ($_SESSION["pesanan"] as $id_produk => $jumlah)
-          {
-            $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_produk (id_pemesanan, id_produk, jumlah) 
-              VALUES ('$id_terbaru', '$id_produk', '$jumlah') ");
-          }          
+?>
+        <h3 class="text-center font-weight-bold">DETAIL PRODUK</h3>
 
-          // Mengosongkan pesanan
-          unset($_SESSION["pesanan"]);
+              <img src="images/<?php echo $result['gambar'] ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                  
+                  <h5 class="card-title font-weight-bold"><?php echo $result['nama_produk'] ?></h5>
+                  <h5 class="card-title font-weight-bold"><?php echo $result['harga'] ?></h5>
+                  <h5 class="card-title font-weight-bold"><?php echo $result['detail_produk'] ?></h5>
 
-          // Dialihkan ke halaman nota
-          echo "<script>alert('Pemesanan Sukses!');</script>";
-          echo "<script>location= 'produk_pembeli.php'</script>";
-      }
-      ?>
-    </div>
-    
-  <!-- Akhir Produk -->
-    
+        <a href="produk_pembeli.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a><br><br>
+        <div class="clear">
+		<a href="order_pembeli.php" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> CHECK OUT &raquo;</a> </div>
+
+
+
   <br><br><br><br>
   <div class="row">
   <div class="container">

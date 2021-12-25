@@ -75,6 +75,10 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
           <input type="text" class="form-control" id="harga1" name="harga" value="<?php echo $result[0]['harga'] ?>">
         </div>
         <div class="form-group">
+          <label for="detail1">Detail Produk</label>
+          <input type="text" class="form-control" id="detail1" name="detail" value="<?php echo $result[0]['detail'] ?>">
+        </div>
+        <div class="form-group">
           <label for="gambar">Foto Produk</label>
           <input type="file" class="form-control-file border" id="gambar" name="gambar">
         </div><br>

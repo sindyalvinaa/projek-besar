@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
     session_start();
       if(!isset($_SESSION['login_user'])) {
         header("location: login.php");
@@ -89,6 +90,7 @@
                 <h5 class="card-title font-weight-bold"><?php echo $result['nama_produk'] ?></h5>
                <label class="card-text harga"><strong>Rp.</strong> <?php echo number_format($result['harga']); ?></label><br>
                 <a href="beli.php?id_produk=<?php echo $result['id_produk']; ?>" class="btn btn-success btn-sm btn-block ">BELI</a>
+                <a href="detail_produk.php?id_produk=<?php echo $result['id_produk']; ?>" class="btn btn-success btn-sm btn-block ">DETAIL</a>
               </div>
             </div>
           </div>

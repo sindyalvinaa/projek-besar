@@ -66,6 +66,10 @@ include 'koneksi.php';
           <input type="text" class="form-control" id="harga1" name="harga">
         </div>
         <div class="form-group">
+          <label for="harga1">Detail Produk</label>
+          <input type="text" class="form-control" id="detail1" name="detail">
+        </div>
+        <div class="form-group">
           <label for="gambar">Foto Produk</label>
           <input type="file" class="form-control-file border" id="gambar" name="gambar">
         </div><br>
@@ -73,18 +77,20 @@ include 'koneksi.php';
         <button type="reset" class="btn btn-danger" name="reset">Hapus</button>
       </form>
 
+
       <?php 
   if(isset($_POST['tambah'])){
     $nama = $_POST['nama_produk'];
     $jenis = $_POST['jenis_produk'];
     $stok = $_POST['stok'];
     $harga = $_POST['harga'];
+    $detail = $_POST['detail'];
     $nama_file = $_FILES['gambar']['name'];
     $source = $_FILES['gambar']['tmp_name'];
     $folder = './upload/';
 
     move_uploaded_file($source, $folder.$nama_file);
-    $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$nama_file')");
+    $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$detail' '$nama_file')");
 
     if($insert){
       header("location: daftar_produk.php");
