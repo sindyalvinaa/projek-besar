@@ -13,25 +13,23 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
   echo "<script>location= 'produk_pembeli.php'</script>";
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-                           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
-
     <title>Nadiraa Hijab Official Shop</title>
   </head>
+
   <body>
   <!-- Jumbotron -->
       <div class="jumbotron jumbotron-fluid text-center">
@@ -41,17 +39,16 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
           <p class="lead font-weight-bold">WELCOME TO NADIRAA HIJAB<br> </p>
         </div>
       </div>
-  <!-- Akhir Jumbotron -->
+  <!-- Jumbotron -->
 
   <!-- Navbar -->
       <nav class="navbar navbar-expand-lg  bg-dark">
         <div class="container">
         <a class="navbar-brand text-white" href="user.php"><strong>Nadiraa</strong>Hijab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -72,18 +69,13 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
             <li class="nav-item">
               <a class="nav-link mr-4" href="logout.php">LOGOUT</a>
             </li>
-          </ul>
-        </div>
-       </div> 
-      </nav>
-  <!-- Akhir Navbar -->
+          </ul></div></div> </nav>
+  <!-- Navbar -->
 
-  <!-- Awal produk -->
+  <!-- Produk -->
     <div class="container">
       <div class="judul-pesanan mt-5">
-       
         <h3 class="text-center font-weight-bold">PESANAN ANDA</h3>
-        
       </div>
       <table class="table table-bordered" id="example">
         <thead class="thead-light">
@@ -94,19 +86,16 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
             <th scope="col">Jumlah</th>
             <th scope="col">Subharga</th>
             <th scope="col">Opsi</th>
-          </tr>
-        </thead>
+          </tr></thead>
         <tbody>
             <?php $nomor=1; ?>
             <?php $totalbelanja = 0; ?>
             <?php foreach ($_SESSION["order"] as $id_produk => $jumlah) : ?>
-
             <?php 
               include('koneksi.php');
               $ambil = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
               $pecah = $ambil -> fetch_assoc();
               $subharga = $pecah["harga"]*$jumlah;
-
             ?>
           <tr>
             <td><?php echo $nomor; ?></td>
@@ -133,37 +122,27 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
         <a href="produk_pembeli.php" class="btn btn-primary btn-sm">Lihat Produk</a>
         <button class="btn btn-success btn-sm" name="konfirm">Konfirmasi Pesanan</button>
       </form>        
-
       <?php 
       if(isset($_POST['konfirm'])) {
           $tanggal_pemesanan=date("Y-m-d");
-
           // Menyimpan data ke tabel pemesanan
           $insert = mysqli_query($koneksi, "INSERT INTO pemesanan (tanggal_pemesanan, total_belanja) VALUES ('$tanggal_pemesanan', '$totalbelanja')");
-
           // Mendapatkan ID barusan
           $id_terbaru = $koneksi->insert_id;
-
           // Menyimpan data ke tabel pemesanan produk
           foreach ($_SESSION["pesanan"] as $id_produk => $jumlah)
           {
             $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_produk (id_pemesanan, id_produk, jumlah) 
               VALUES ('$id_terbaru', '$id_produk', '$jumlah') ");
           }          
-
           // Mengosongkan pesanan
           unset($_SESSION["pesanan"]);
-
           // Dialihkan ke halaman nota
           echo "<script>alert('Pemesanan Sukses!');</script>";
           echo "<script>location= 'produk_pembeli.php'</script>";
-      }
-      ?>
-    </div>
-    
-  <!-- Akhir Produk -->
-    
-  <br><br><br><br>
+      }?></div><br><br><br><br>
+  <!-- Produk -->
+
   <div class="row">
   <div class="container">
         <div class="row footer-body">
@@ -173,7 +152,6 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
             <div class="menu-information-container">
               <ul id="menu-information" class="menu">
                 <li id="menu-item-3141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3141">
-
             <a href="about_us.php">About Us</a></li>
           <li id="menu-item-3142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3142">
             <a href="contact.php">Contact Us</a></li>
@@ -182,12 +160,10 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
           <li id="menu-item-3144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3144">
             <a href="FAQ.php">FAQ</a></li>
           </ul></div></aside></section>
-
           <section class="large-3 medium-4 columns column-widget right-align">
           <aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="widget-title">Collections</h3><div 
           class="menu-main-navigation-container"><ul id="menu-main-navigation-1" class="menu"><li id="menu-item-1328" 
           class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-1328">
-
           <a href="produk_pembeli.php">Product</a></li>
           <li id="menu-item-1698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1698">
             <a href="order_pembeli.php">Add Cart</a></li>
@@ -196,7 +172,8 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
           <li id="menu-item-1701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1701">
             <a href="contact.php">Contact</a></li>
           </ul></div></aside> </section>
-  <!-- Awal Footer -->
+
+  <!-- Footer -->
       <hr class="footer">
       <div class="container">
         <div class="row footer-body">
@@ -205,8 +182,7 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
             <strong>Copyright</strong> <i class="far fa-copyright"></i>2021 -  Designed by sindyalvinaa & rinapuji</p>
           </div>
           </div>
-
-  <!-- Akhir Footer -->
+  <!-- Footer -->
 
   <!-- Header -->
   <div class="medsos">
@@ -217,11 +193,8 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
                 <li><a href="https://www.instagram.com/nadiraa_hijab/"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://www.youtube.com/watch?v=jVcqWVzRdVA&feature=youtu.be"><i class="fab fa-youtube"></i></a></li>
                 <li><a href="http://twitter.com/NadiraaHijab"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </div>
-    </div>
-
-
+            </ul></div></div>
+    <!-- Header -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -239,8 +212,4 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
     <script>
       $(document).ready(function() {
           $('#example').DataTable();
-      } );
-    </script>
-  </body>
-</html>
-<?php } ?>
+      } );</script></body></html><?php } ?>

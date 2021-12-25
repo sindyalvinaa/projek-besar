@@ -5,6 +5,7 @@ include 'koneksi.php';
 <!doctype html>
 <html lang="en">
   <head>
+
     <!-- Required meta tags --> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,17 +55,14 @@ include 'koneksi.php';
                 direct trade kogi pug literally ethical sustainable viral.</h6>
             <br>
             <h4 class="font-weight-bold">MODIFICATION OF POLICIES</h4>
-          <h6> Fingerstache occupy keffiyeh, normcore raw denim health goth Brooklyn lo-fi Echo Park cardigan pop-up sriracha 8-bit. 
+            <h6> Fingerstache occupy keffiyeh, normcore raw denim health goth Brooklyn lo-fi Echo Park cardigan pop-up sriracha 8-bit. 
                Gastropub 3 wolf moon 8-bit butcher. Gentrify roof party umami Schlitz plaid, fixie American Apparel +1 banh mi keffiyeh 
                crucifix readymade disrupt twee cray. Pitchfork quinoa cliche single-origin coffee. Polaroid tote bag Schlitz drinking 
                vinegar twee, small batch vinyl paleo plaid wolf pork belly brunch. Vinyl pork belly mixtape Vice farm-to-table, seitan 
                direct trade kogi pug literally ethical sustainable viral.
                 Semiotics McSweeneys next level put a bird on it Pitchfork. Tumblr lomo semiotics, dreamcatcher food truck organic 
-                Schlitz chambray normcore meh tousled.</h6>
-            <br>
-        </div>
-</div>
-<br><br><br><br>
+                Schlitz chambray normcore meh tousled.</h6><br></div></div><br><br><br><br>
+                
   <div class="row">
   <div class="container">
         <div class="row footer-body">
@@ -74,7 +72,6 @@ include 'koneksi.php';
             <div class="menu-information-container">
               <ul id="menu-information" class="menu">
                 <li id="menu-item-3141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3141">
-
             <a href="about_us.php">About Us</a></li>
           <li id="menu-item-3142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3142">
             <a href="contact.php">Contact Us</a></li>
@@ -83,14 +80,12 @@ include 'koneksi.php';
           <li id="menu-item-3144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3144">
             <a href="FAQ.php">FAQ</a></li>
           </ul></div></aside></section>
-
           <section class="large-3 medium-4 columns column-widget right-align">
           <aside id="nav_menu-2" class="widget widget_nav_menu">
             <h3 class="widget-title">Collections</h3>
             <div class="menu-main-navigation-container">
               <ul id="menu-main-navigation-1" class="menu">
                 <li id="menu-item-1328" class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-1328">
-
           <a href="produk_pembeli.php">Product</a></li>
           <li id="menu-item-1698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1698">
             <a href="order_pembeli.php">Add Cart</a></li>
@@ -101,7 +96,7 @@ include 'koneksi.php';
           </ul></div></aside> </section>
 
 
-  <!-- Awal Footer -->
+  <!-- Footer -->
     <hr class="footer">
       <div class="container">
         <div class="row footer-body">
@@ -111,8 +106,7 @@ include 'koneksi.php';
             <strong>Copyright</strong> <i class="far fa-copyright"></i> 2021 -  Designed by sindyalvinaa & rinapuji </p>
           </div>
         </div>
-
-  <!-- Akhir Footer -->
+  <!-- Footer -->
 
   <!-- Header -->
   <div class="medsos">
@@ -127,7 +121,7 @@ include 'koneksi.php';
             </ul>
         </div>
     </div>
-
+  <!-- Header -->
 
 
     <!-- Optional JavaScript -->
@@ -142,8 +136,4 @@ include 'koneksi.php';
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
             crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-  </body>
-</html>
-<?php 
-?>
+    <script type="text/javascript" src="js/jquery.js"></script></body></html><?php ?>

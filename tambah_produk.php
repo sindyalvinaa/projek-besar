@@ -15,11 +15,10 @@ include 'koneksi.php';
     <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
     <title>Form Tambah Produk</title>
   </head>
+
   <body>
- 
  <!-- Form Registrasi -->
   <div class="container">
     <h3 class="text-center mt-3 mb-5">SILAHKAN TAMBAH PRODUK</h3>
@@ -31,31 +30,26 @@ include 'koneksi.php';
         </div>
         <div class="form-group">
           <label for="#">Jenis Produk</label>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Hijab" name="jenis_produk" checked>Hijab 
             </label>
           </div>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Aksesoris" name="jenis_produk">Aksesoris
             </label>
           </div>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Blouse" name="jenis_produk">Blouse
             </label>
           </div>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Dress" name="jenis_produk">Dress
             </label>
           </div>
-
          </div>
         <div class="form-group">
           <label for="stok1">Stok</label>
@@ -77,9 +71,8 @@ include 'koneksi.php';
         <button type="reset" class="btn btn-danger" name="reset">Hapus</button>
       </form>
 
-
       <?php 
-  if(isset($_POST['tambah'])){
+    if(isset($_POST['tambah'])){
     $nama = $_POST['nama_produk'];
     $jenis = $_POST['jenis_produk'];
     $stok = $_POST['stok'];
@@ -88,22 +81,15 @@ include 'koneksi.php';
     $nama_file = $_FILES['gambar']['name'];
     $source = $_FILES['gambar']['tmp_name'];
     $folder = './upload/';
-
     move_uploaded_file($source, $folder.$nama_file);
     $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$detail' '$nama_file')");
-
     if($insert){
       header("location: daftar_produk.php");
     }
     else {
       echo "Maaf, terjadi kesalahan saat mencoba menyimpan data ke database";
     }
-  }
-
-   ?>
-
-  </div>
-  </div>
+  }?></div></div>
   <!-- Akhir Form Registrasi -->
 
     <!-- Optional JavaScript -->
@@ -115,6 +101,4 @@ include 'koneksi.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-  </body>
-</html>
+    <script type="text/javascript" src="js/jquery.js"></script></body></html>

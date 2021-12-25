@@ -41,7 +41,7 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
           <p class="lead font-weight-bold">WELCOME TO NADIRAA HIJAB<br> </p>
         </div>
       </div>
-  <!-- Akhir Jumbotron -->
+  <!-- Jumbotron -->
 
   <!-- Navbar -->
       <nav class="navbar navbar-expand-lg  bg-dark">
@@ -51,7 +51,6 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -71,43 +70,28 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
             </li>
             <li class="nav-item">
               <a class="nav-link mr-4" href="logout.php">LOGOUT</a>
-            </li>
-          </ul>
-        </div>
-       </div> 
-      </nav>
-  <!-- Akhir Navbar -->
+            </li> </ul></div></div> </nav>
+  <!-- Navbar -->
 
-
-  
   <div class="container">
       <div class="judul-pesanan mt-5">
-
       <?php 
-
-include('koneksi.php');
-$id_produk = $_GET['id_produk'];
-$query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
-$result = mysqli_fetch_array($query);
-
-
-?>
+      include('koneksi.php');
+      $id_produk = $_GET['id_produk'];
+      $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$id_produk'");
+      $result = mysqli_fetch_array($query);
+      ?>
         <h3 class="text-center font-weight-bold">DETAIL PRODUK</h3>
-
               <img src="images/<?php echo $result['gambar'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                  
                   <h5 class="card-title font-weight-bold"><?php echo $result['nama_produk'] ?></h5>
                   <h5 class="card-title font-weight-bold"><?php echo $result['harga'] ?></h5>
                   <h5 class="card-title font-weight-bold"><?php echo $result['detail_produk'] ?></h5>
+    <a href="produk_pembeli.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a><br><br>
+    <div class="clear">
+		<a href="order_pembeli.php" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-shopping-cart icon-white">
+    </i> CHECK OUT &raquo;</a> </div><br><br><br>
 
-        <a href="produk_pembeli.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a><br><br>
-        <div class="clear">
-		<a href="order_pembeli.php" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> CHECK OUT &raquo;</a> </div>
-
-
-
-  <br><br><br><br>
   <div class="row">
   <div class="container">
         <div class="row footer-body">
@@ -117,30 +101,26 @@ $result = mysqli_fetch_array($query);
             <div class="menu-information-container">
               <ul id="menu-information" class="menu">
                 <li id="menu-item-3141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3141">
-
             <a href="about_us.php">About Us</a></li>
           <li id="menu-item-3142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3142">
             <a href="contact.php">Contact Us</a></li>
           <li id="menu-item-3143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3143">
             <a href="ThePrivacyPolicy.php">The Privacy Policy</a></li>
           <li id="menu-item-3144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3144">
-            <a href="FAQ.php">FAQ</a></li>
-          </ul></div></aside></section>
-
+            <a href="FAQ.php">FAQ</a></li></ul></div></aside></section>
           <section class="large-3 medium-4 columns column-widget right-align">
           <aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="widget-title">Collections</h3><div 
           class="menu-main-navigation-container"><ul id="menu-main-navigation-1" class="menu"><li id="menu-item-1328" 
           class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-1328">
-
           <a href="produk_pembeli.php">Product</a></li>
           <li id="menu-item-1698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1698">
             <a href="order_pembeli.php">Add Cart</a></li>
           <li id="menu-item-1700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1700">
             <a href="blog.php">Blog</a></li>
           <li id="menu-item-1701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1701">
-            <a href="contact.php">Contact</a></li>
-          </ul></div></aside> </section>
-  <!-- Awal Footer -->
+            <a href="contact.php">Contact</a></li></ul></div></aside> </section>
+
+  <!-- Footer -->
       <hr class="footer">
       <div class="container">
         <div class="row footer-body">
@@ -149,8 +129,7 @@ $result = mysqli_fetch_array($query);
             <strong>Copyright</strong> <i class="far fa-copyright"></i>2021 -  Designed by sindyalvinaa & rinapuji</p>
           </div>
           </div>
-
-  <!-- Akhir Footer -->
+  <!-- Footer -->
 
   <!-- Header -->
   <div class="medsos">
@@ -164,8 +143,7 @@ $result = mysqli_fetch_array($query);
             </ul>
         </div>
     </div>
-
-
+     <!-- Header -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -183,8 +161,4 @@ $result = mysqli_fetch_array($query);
     <script>
       $(document).ready(function() {
           $('#example').DataTable();
-      } );
-    </script>
-  </body>
-</html>
-<?php } ?>
+      } );</script></body></html><?php } ?>

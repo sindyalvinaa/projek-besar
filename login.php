@@ -17,7 +17,6 @@ include 'koneksi.php';
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 
-
     <title>Halaman Login</title>
   </head>
   <body>
@@ -50,21 +49,19 @@ include 'koneksi.php';
         <button type="submit" name="submit" class="btn btn-primary">LOGIN</button>
         <button type="reset" name="reset" class="btn btn-danger">RESET</button>
       </form>
-  <!-- Akhir Form Login -->
+  <!-- Form Login -->
 
   <!-- Eksekusi Form Login -->
       <?php 
         if(isset($_POST['submit'])) {
           $user = $_POST['username'];
           $password = $_POST['password'];
-
           // Query untuk memilih tabel
           $cek_data = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$user' AND password = '$password'");
           $hasil = mysqli_fetch_array($cek_data);
           $status = $hasil['status'];
           $login_user = $hasil['username'];
           $row = mysqli_num_rows($cek_data);
-
           // Pengecekan Kondisi Login Berhasil/Tidak
             if ($row > 0) {
                 session_start();   
@@ -81,7 +78,7 @@ include 'koneksi.php';
         }
        ?>
     </div>
-  <!-- Akhir Eksekusi Form Login -->
+  <!-- Eksekusi Form Login -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -93,5 +90,4 @@ include 'koneksi.php';
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-  </body>
-</html>
+  </body></html>

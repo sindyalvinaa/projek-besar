@@ -34,7 +34,7 @@ error_reporting(0);
           <p class="lead font-weight-bold">WELCOME TO NADIRAA HIJAB <br> </p>
         </div>
       </div>
-  <!-- Akhir Jumbotron -->
+  <!-- Jumbotron -->
 
   <!-- Navbar -->
       <nav class="navbar navbar-expand-lg  bg-dark">
@@ -44,7 +44,6 @@ error_reporting(0);
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -64,19 +63,13 @@ error_reporting(0);
             </li>
             <li class="nav-item">
               <a class="nav-link mr-4" href="logout.php">LOGOUT</a>
-            </li>
-          </ul>
-        </div>
-       </div> 
-      </nav>
-  <!-- Akhir Navbar -->
+            </li></ul></div></div> </nav>
+  <!-- Navbar -->
 
-  <!-- Awal produk -->
+  <!-- Produk -->
     <div class="container">
       <div class="judul-pesanan mt-5">
-       
         <h3 class="text-center font-weight-bold">DATA ORDER CUSTOMER</h3>
-        
       </div>
       <table class="table table-bordered" id="example">
         <thead class="thead-light">
@@ -118,7 +111,6 @@ error_reporting(0);
           </tr>
         </tfoot>
       </table><br>
-      
       <form method="POST" action="">
         <a href="order.php" class="btn btn-success btn-sm">Kembali</a>
         <button class="btn btn-primary btn-sm" name="bayar">Konfirmasi Pembayaran</button>
@@ -129,11 +121,9 @@ error_reporting(0);
           echo "<script>alert('Produk Telah Dibayar !');</script>";
           echo "<script>location= 'order.php'</script>";
         }
-      ?>
-     
-    </div>
-  <!-- Akhir Produk -->
-    <br><br>
+      ?></div><br><br>
+  <!-- Produk -->
+
   <div class="row">
   <div class="container">
         <div class="row footer-body">
@@ -143,31 +133,26 @@ error_reporting(0);
             <div class="menu-information-container">
               <ul id="menu-information" class="menu">
                 <li id="menu-item-3141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3141">
-
             <a href="about_us.php">About Us</a></li>
           <li id="menu-item-3142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3142">
             <a href="contact.php">Contact Us</a></li>
           <li id="menu-item-3143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3143">
             <a href="ThePrivacyPolicy.php">The Privacy Policy</a></li>
           <li id="menu-item-3144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3144">
-            <a href="FAQ.php">FAQ</a></li>
-          </ul></div></aside></section>
-
+            <a href="FAQ.php">FAQ</a></li></ul></div></aside></section>
           <section class="large-3 medium-4 columns column-widget right-align">
           <aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="widget-title">Collections</h3><div 
           class="menu-main-navigation-container"><ul id="menu-main-navigation-1" class="menu"><li id="menu-item-1328" 
           class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-1328">
-
           <a href="produk_pembeli.php">Product</a></li>
           <li id="menu-item-1698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1698">
             <a href="order_pembeli.php">Add Cart</a></li>
           <li id="menu-item-1700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1700">
             <a href="blog.php">Blog</a></li>
           <li id="menu-item-1701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1701">
-            <a href="contact.php">Contact</a></li>
-          </ul></div></aside> </section>
+            <a href="contact.php">Contact</a></li></ul></div></aside> </section>
 
-  <!-- Awal Footer -->
+  <!-- Footer -->
       <hr class="footer">
       <div class="container">
         <div class="row footer-body">
@@ -176,8 +161,7 @@ error_reporting(0);
             <strong>Copyright</strong> <i class="far fa-copyright"></i>2021 -  Designed by sindyalvinaa & rinapuji</p>
           </div>
           </div>
-
-  <!-- Akhir Footer -->
+  <!-- Footer -->
 
   <!-- Header -->
   <div class="medsos">
@@ -191,8 +175,7 @@ error_reporting(0);
             </ul>
         </div>
     </div>
-
-
+<!-- Header -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -210,10 +193,4 @@ error_reporting(0);
     <script>
       $(document).ready(function() {
           $('#example').DataTable();
-      } );
-    </script>
-  </body>
-</html>
-<?php 
-} 
-?>
+      } );</script> </body></html><?php } ?>

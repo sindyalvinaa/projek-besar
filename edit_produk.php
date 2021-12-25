@@ -1,12 +1,9 @@
 <?php 
 error_reporting(0);
 include('koneksi.php');
-
 $id_produk = $_GET['id_produk'];
-
 $ambil = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk ='$id_produk'");
 $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
-
 ?>
 
 <!doctype html>
@@ -15,19 +12,16 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
     <!-- Required meta tags --> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-                           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+               integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-
     <title>Form Edit Produk</title>
   </head>
+
   <body>
- 
  <!-- Form Registrasi -->
   <div class="container">
     <h3 class="text-center mt-3 mb-5">SILAHKAN EDIT PRODUK</h3>
@@ -40,31 +34,26 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
         </div>
         <div class="form-group">
           <label for="#">Jenis Produk</label>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" name="jenis_produk" value="Hijab">Hijab 
             </label>
           </div>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Aksesoris" name="jenis_produk">Aksesoris
             </label>
           </div>
-
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" name="jenis_produk" value="Blouse">Blouse
             </label>
           </div>
-          
           <div class="form-check">
             <label class="form-check-label">
               <input type="radio" class="form-check-input" value="Dress" name="jenis_produk">Dress
             </label>
           </div>
-
          </div>
         <div class="form-group">
           <label for="stok1">Stok</label>
@@ -83,12 +72,8 @@ $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
           <input type="file" class="form-control-file border" id="gambar" name="gambar">
         </div><br>
         <button type="submit" class="btn btn-primary" name="tambah">Edit</button>
-        <button type="reset" class="btn btn-danger" name="reset">Hapus</button>
-  </div>
-  </div>
-  <!-- Akhir Form Registrasi --> 
-
-
+        <button type="reset" class="btn btn-danger" name="reset">Hapus</button></div></div>
+  <!-- Form Registrasi --> 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
