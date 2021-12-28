@@ -77,7 +77,7 @@
         <!--Ganti-->
           <small class="textForm">Sudah Punya Akun? <a href="login.php" class="textForm">Login Disini</a></small>
         <!--Selesai-->
-        </div> 
+        </div>  
     </form>
   </div>
   </div>
