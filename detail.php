@@ -1,14 +1,7 @@
 <?php 
-session_start();
-$id_produk = $_GET['id_produk'];
-if (isset($_SESSION['detail_produk'][$id_produk]))
+if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
 {
-	$_SESSION['detail_produk'][$id_produk];
+  echo "<script>alert('Detail Produk');</script>";
+  echo "<script>location= 'produk_pembeli.php'</script>";
 }
-else 
-{
-	$_SESSION['detail_produk'][$id_produk];
-}
-echo "<script>alert('Detail Produk');</script>";
-echo "<script>location= 'detail_produk.php'</script>";
- ?>
+?>

@@ -6,13 +6,6 @@ include('koneksi.php');
         header("location: login.php");
       }else{
 ?>
-<?php 
-if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
-{
-  echo "<script>alert('Keranjang Belanja Kosong, Silahkan Pilih Produk dahulu');</script>";
-  echo "<script>location= 'produk_pembeli.php'</script>";
-}
-?>
 
 <!doctype html>
 <html lang="en">
@@ -88,11 +81,9 @@ if(empty($_SESSION["order"]) OR !isset($_SESSION["order"]))
                   <h5 class="card-title font-weight-bold"><?php echo $result['harga'] ?></h5>
                   <h5 class="card-title font-weight-bold"><?php echo $result['detail_produk'] ?></h5>
     <a href="produk_pembeli.php" class="btn btn-info">&laquo; CONTINUE SHOPPING</a><br><br>
-    <div class="clear">
-		<a href="order_pembeli.php" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-shopping-cart icon-white">
-    </i> CHECK OUT &raquo;</a> </div><br><br><br>
-
-  <div class="row">
+    <a href="beli.php?id_produk=<?php echo $result['id_produk']; ?>" class="btn btn-info">&laquo; BELI</a>
+  
+    <div class="row">
   <div class="container">
         <div class="row footer-body">
           <section class="large-3 medium-4 columns column-widget right-align">
