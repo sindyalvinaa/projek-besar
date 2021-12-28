@@ -22,20 +22,20 @@
     <form method="POST" action="simpan_register.php">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="user">Username</label>
+          <label for="user">Username <span class="text-danger fw-bold">*</label>
           <input type="text" class="form-control" id="user" name="username" placeholder="Masukan Username">
         </div>
         <div class="form-group col-md-6">
-          <label for="pass">Password</label>
+          <label for="pass">Password <span class="text-danger fw-bold">*</label>
           <input type="password" class="form-control" id="pass" name="password" placeholder="Masukan Password">
         </div>
       </div>
       <div class="form-group">
-        <label for="nama">Nama Lengkap</label>
+        <label for="nama">Nama Lengkap <span class="text-danger fw-bold">*</label>
         <input type="text" class="form-control" id="nama" name="nama_lengkap" placeholder="Masukan Nama Lengkap">
       </div>
       <div class="form-group">
-        <label for="jk">Jenis Kelamin</label><br>
+        <label for="jk">Jenis Kelamin <span class="text-danger fw-bold">*</label><br>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk" value="Laki-Laki">
           <label class="form-check-label" for="jk">Laki-Laki</label>
@@ -46,29 +46,38 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="tgl">Tanggal Lahir</label>
+        <label for="tgl">Tanggal Lahir <span class="text-danger fw-bold">*</label>
         <input type="date" class="form-control" id="tgl" name="tanggal_lahir">
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="rumah">Alamat</label>
+          <label for="rumah">Alamat <span class="text-danger fw-bold">*</label>
           <input type="text" class="form-control" id="rumah" name="alamat" placeholder="Masukan Alamat">
         </div>
         <div class="form-group col-md-2">
-          <label for="telp">No. Telephone</label>
+          <label for="telp">No. Telephone <span class="text-danger fw-bold">*</label>
           <input type="text" class="form-control" id="telp" name="hp" placeholder="No. Telephone">
         </div>
       <div class="form-group col-md-4">
-          <label for="sts">Status Registrasi</label>
+          <label for="sts">Status Registrasi <span class="text-danger fw-bold">*</label>
           <select id="sts" class="form-control" name="status">
             <option selected>Pilih...</option>
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
         </div>
-      </div>     
+      </div>  
+      <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Saya Menyetujui <span class="text-danger fw-bold">Syarat & Ketentuan</span> Yang Berlaku <span class="text-danger fw-bold">*</span></label>
+            </div>   
       <button type="register" class="btn btn-primary">Register</button>
       <button type="reset" class="btn btn-danger">Reset</button>
+      <div class="mb-3" >
+        <!--Ganti-->
+          <small class="textForm">Sudah Punya Akun? <a href="login.php" class="textForm">Login Disini</a></small>
+        <!--Selesai-->
+        </div> 
     </form>
   </div>
   </div>
