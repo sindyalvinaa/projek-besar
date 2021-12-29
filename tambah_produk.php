@@ -77,12 +77,12 @@ include 'koneksi.php';
     $jenis = $_POST['jenis_produk'];
     $stok = $_POST['stok'];
     $harga = $_POST['harga'];
-    $detail = $_POST['detail'];
+    $detail = $_POST['detail_produk'];
     $nama_file = $_FILES['gambar']['name'];
     $source = $_FILES['gambar']['tmp_name'];
     $folder = './upload/';
     move_uploaded_file($source, $folder.$nama_file);
-    $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$detail' '$nama_file')");
+    $insert = mysqli_query($koneksi, "INSERT INTO produk VALUES (NULL, '$nama', '$jenis', '$stok', '$harga', '$detail_produk', '$nama_file')");
     if($insert){
       header("location: daftar_produk.php");
     }
